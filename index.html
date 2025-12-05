@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periódico Estudiantil Marco Fidel Suárez</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header con logo y nombre de la institución -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="img/escudo.png" alt="Escudo Marco Fidel Suárez" class="logo-escudo">
+                <div class="school-info">
+                    <h1 class="school-name">Marco Fidel Suárez</h1>
+                    <p class="newspaper-name">El Periódico Estudiantil</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav">
+            <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a>
+            <a href="#articulos" class="nav-link">Artículos</a>
+            <a href="#suscribirse" class="nav-link">Suscribirse</a>
+        </div>
+    </nav>
+
+    <!-- Sección principal -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Sección de bienvenida -->
+            <section id="inicio" class="welcome-section">
+                <h2>Bienvenidos al periódico estudiantil</h2>
+                <p>Mantente informado con las últimas noticias y eventos de nuestra escuela.</p>
+            </section>
+
+            <!-- Sección Sobre Nosotros -->
+            <section id="sobre-nosotros" class="about-section">
+                <h2>Sobre nosotros - Marco Fidel Suárez</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            <strong>La Institución Educativa Marco Fidel Suárez</strong> es un referente de excelencia 
+                            académica en nuestra región. Fundada hace más de 60 años, nuestra institución ha formado 
+                            generaciones de estudiantes comprometidos con el conocimiento, la justicia y el progreso social.
+                        </p>
+                        <p>
+                            Nuestro nombre honra la memoria de <strong>Marco Fidel Suárez</strong>, ilustre colombiano, 
+                            escritor, gramático y expresidente de Colombia, quien representa los valores de esfuerzo, 
+                            superación y dedicación al estudio que promovemos en nuestra comunidad educativa.
+                        </p>
+                        <p>
+                            Nos caracterizamos por ofrecer una educación integral que combina la excelencia académica 
+                            con la formación en valores, el desarrollo del pensamiento crítico y el compromiso con la 
+                            comunidad. Nuestros estudiantes se destacan por su liderazgo, creatividad y responsabilidad social.
+                        </p>
+                        <p>
+                            <strong>Misión:</strong> Formar ciudadanos íntegros, críticos y competentes, capaces de 
+                            transformar su entorno y contribuir al desarrollo de una sociedad más justa y equitativa.
+                        </p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">60+</span>
+                            <span class="stat-label">Años de historia</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1500+</span>
+                            <span class="stat-label">Estudiantes</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Docentes</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección para crear artículos (EJEMPLO COMPLETADO) -->
+            <section id="crear-articulo" class="create-article-section">
+                <h2>Publicar nuevo artículo</h2>
+                <form id="form-articulo" class="form-container">
+                    <div class="form-group">
+                        <label for="titulo">Título del artículo *</label>
+                        <input 
+                            type="text" 
+                            id="titulo" 
+                            name="titulo" 
+                            placeholder="Ej: Inauguración de la nueva biblioteca"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="autor-nombre">Nombre del autor *</label>
+                        <input 
+                            type="text" 
+                            id="autor-nombre" 
+                            name="autor-nombre" 
+                            placeholder="Ej: Juan Pérez"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="autor-email">Correo del autor *</label>
+                        <input 
+                            type="email" 
+                            id="autor-email" 
+                            name="autor-email" 
+                            placeholder="autor@colegio.edu"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner">URL de la imagen (banner) *</label>
+                        <input 
+                            type="url" 
+                            id="banner" 
+                            name="banner" 
+                            placeholder="https://ejemplo.com/imagen.jpg"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contenido">Contenido del artículo *</label>
+                        <textarea 
+                            id="contenido" 
+                            name="contenido" 
+                            placeholder="Escribe el contenido completo del artículo aquí..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Publicar artículo</button>
+                </form>
+            </section>
+
+            <!-- Sección de artículos publicados -->
+            <section id="articulos" class="articles-section">
+                <h2>Artículos publicados</h2>
+                <div id="articulos-container" class="articles-grid">
+                    <p style="text-align: center; color: #666; grid-column: 1/-1;">⏳ Cargando artículos...</p>
+                </div>
+            </section>
+
+            <!-- Sección de suscripción (EJEMPLO COMPLETADO) -->
+            <section id="suscribirse" class="subscription-section">
+                <h2>Suscríbete a nuestro boletín</h2>
+                <p>Recibe notificaciones por email cada vez que publiquemos un nuevo artículo.</p>
+                <form id="form-suscripcion" class="form-container">
+                    <div class="form-group">
+                        <label for="nombre-suscriptor">Nombre completo *</label>
+                        <input 
+                            type="text" 
+                            id="nombre-suscriptor" 
+                            name="nombre" 
+                            placeholder="Ej: Juan Pérez"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-suscriptor">Correo electrónico *</label>
+                        <input 
+                            type="email" 
+                            id="email-suscriptor" 
+                            name="email" 
+                            placeholder="ejemplo@correo.com"
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn">Suscribirse</button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Periódico estudiantil. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para artículo completo -->
+    <div id="modal-articulo" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="cerrarModal()">×</button>
+            <img id="modal-banner" class="modal-banner" src="" alt="">
+            <div class="modal-body">
+                <h2 id="modal-titulo" class="modal-title"></h2>
+                <span id="modal-fecha" class="modal-date"></span>
+                <p id="modal-contenido" class="modal-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Archivos del proyecto -->
+    <script src="js/articulos.js"></script>
+    <script src="js/suscriptores.js"></script>
+    <script src="js/email.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/publishers.js"></script>
+    
+    <!-- Script de ejemplo completado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🚀 Página cargada - EJEMPLO COMPLETADO');
+            
+            // Cargar artículos desde Firebase
+            await cargarArticulos();
+            
+            // Navegación suave
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remover clase active de todos
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Agregar clase active al clickeado
+                    this.classList.add('active');
+                    
+                    // Scroll suave a la sección
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Formulario de artículos
+            const formArticulo = document.getElementById('form-articulo');
+            formArticulo.addEventListener('submit', async function(evento) {
+                evento.preventDefault();
+                
+                const titulo = document.getElementById('titulo').value;
+                const autorNombre = document.getElementById('autor-nombre').value;
+                const autorEmail = document.getElementById('autor-email').value;
+                const banner = document.getElementById('banner').value;
+                const contenido = document.getElementById('contenido').value;
+                
+                if (!titulo || !autorNombre || !autorEmail || !banner || !contenido) {
+                    alert('Por favor completa todos los campos');
+                    return;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(autorEmail)) {
+                    alert('Por favor ingresa un email válido para el autor');
+                    return;
+                }
+
+                const esValido = await esPublisherValido(autorEmail);
+                if (!esValido) {
+                    alert('Este correo no está autorizado para publicar artículos.');
+                    return;
+                }
+                
+                const articulo = { titulo, banner, contenido, autorNombre, autorEmail };
+                
+                const guardado = await guardarArticulo(articulo);
+                if (guardado) {
+                    // Notificar a los suscriptores (antes del alert para ver los logs)
+                    const resultado = await notificarSuscriptores(articulo);
+                    
+                    if (resultado.enviados > 0) {
+                        alert(`¡Artículo publicado! Se notificó a ${resultado.enviados} suscriptor(es).`);
+                    } else {
+                        alert('¡Artículo publicado exitosamente!');
+                    }
+                    
+                    formArticulo.reset();
+                    location.reload(); // Recargar para ver el nuevo artículo
+                } else {
+                    alert('Error al publicar el artículo. Revisa la consola.');
+                }
+            });
+            
+            // Formulario de suscripción
+            const formSuscripcion = document.getElementById('form-suscripcion');
+            formSuscripcion.addEventListener('submit', async function(evento) {
+                evento.preventDefault();
+                
+                const nombre = document.getElementById('nombre-suscriptor').value;
+                const email = document.getElementById('email-suscriptor').value;
+                
+                if (!nombre || !email) {
+                    alert('Por favor completa todos los campos');
+                    return;
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Por favor ingresa un email válido');
+                    return;
+                }
+                
+                const suscriptor = { nombre, email };
+                
+                const guardado = await guardarSuscriptor(suscriptor);
+                if (guardado) {
+                    alert('¡Suscripción exitosa! Recibirás notificaciones de nuevos artículos.');
+                    formSuscripcion.reset();
+                } else {
+                    alert('Error: Este email ya está suscrito o es inválido');
+                }
+            });
+            
+            // Función para cargar artículos desde Firebase
+            async function cargarArticulos() {
+                try {
+                    const articulos = await obtenerArticulos();
+                    const container = document.getElementById('articulos-container');
+                    
+                    if (articulos.length === 0) {
+                        container.innerHTML = '<p style="text-align: center; color: #666;">No hay artículos publicados aún.</p>';
+                        return;
+                    }
+                    
+                    // Limpiar el contenedor
+                    container.innerHTML = '';
+                    
+                    // Crear tarjeta para cada artículo
+                    articulos.forEach(articulo => {
+                        const card = document.createElement('div');
+                        card.className = 'article-card';
+                        card.setAttribute('data-articulo', JSON.stringify(articulo));
+
+                        const autorLinea = articulo.autorNombre 
+                            ? ` · ✍ ${articulo.autorNombre}` 
+                            : '';
+                        
+                        card.innerHTML = `
+                            <img src="${articulo.banner}" 
+                                 alt="${articulo.titulo}" 
+                                 class="article-banner"
+                                 onerror="this.style.display='none'">
+                            <div class="article-content">
+                                <h3>${articulo.titulo}</h3>
+                                <p class="article-date">📅 ${articulo.fecha || 'Fecha no disponible'}${autorLinea}</p>
+                                <p>${articulo.contenido.substring(0, 150)}...</p>
+                            </div>
+                        `;
+                        
+                        // Agregar evento click para abrir modal
+                        card.addEventListener('click', function() {
+                            abrirModal(articulo);
+                        });
+                        
+                        container.appendChild(card);
+                    });
+                    
+                    console.log(`✅ ${articulos.length} artículos cargados`);
+                    
+                } catch (error) {
+                    console.error('❌ Error al cargar artículos:', error);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

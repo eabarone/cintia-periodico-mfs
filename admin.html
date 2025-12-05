@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel admin - Periódico MFS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <section class="create-article-section">
+                <h2>Crear publisher</h2>
+                <form id="form-publisher" class="form-container">
+                    <div class="form-group">
+                        <label for="publisher-nombre">Nombre del publisher *</label>
+                        <input type="text" id="publisher-nombre" name="publisher-nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="publisher-email">Correo del publisher *</label>
+                        <input type="email" id="publisher-email" name="publisher-email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admin-email">Correo del admin que autoriza *</label>
+                        <input type="email" id="admin-email" name="admin-email" required>
+                    </div>
+
+                    <button type="submit" class="btn">Crear publisher</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <script src="js/articulos.js"></script>
+    <script src="js/publishers.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const formPublisher = document.getElementById('form-publisher');
+
+            formPublisher.addEventListener('submit', async function (evento) {
+                evento.preventDefault();
+
+                const nombre = document.getElementById('publisher-nombre').value.trim();
+                const email = document.getElementById('publisher-email').value.trim();
+                const adminEmail = document.getElementById('admin-email').value.trim();
+
+                if (!nombre || !email || !adminEmail) {
+                    alert('Por favor completa todos los campos');
+                    return;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email) || !emailRegex.test(adminEmail)) {
+                    alert('Por favor ingresa correos válidos');
+                    return;
+                }
+
+                const resultado = await crearPublisher({ nombre: nombre, email: email, adminEmail: adminEmail });
+
+                if (resultado.exito) {
+                    alert('Publisher creado correctamente');
+                    formPublisher.reset();
+                } else if (resultado.motivo === 'ADMIN_NO_VALIDO') {
+                    alert('El correo del admin no está registrado como administrador.');
+                } else if (resultado.motivo === 'PUBLISHER_DUPLICADO') {
+                    alert('Ya existe un publisher con ese correo.');
+                } else if (resultado.motivo === 'DATOS_INVALIDOS') {
+                    alert('Datos inválidos. Verifica la información ingresada.');
+                } else {
+                    alert('Ocurrió un error al crear el publisher. Intenta nuevamente.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+═══════════════════════════════════════════════════════════════
+  📰 PROYECTO PERIÓDICO ESTUDIANTIL
+═══════════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════════
+📁 ARCHIVOS DEL PROYECTO
+═══════════════════════════════════════════════════════════════
+
+PARA LOS ESTUDIANTES (darles estos):
+  ✓ js/articulos.js           - Funciones de artículos (NO modificar)
+  ✓ js/suscriptores.js        - Funciones de suscriptores (NO modificar)
+  ✓ js/email.js               - Funciones de email (NO modificar)
+  ✓ js/modal.js               - Funciones del modal (NO modificar)
+  ✓ periodico-ejemplo/        - Carpeta con ejemplo completo (referencia)
+  ✓ INSTRUCCIONES_ESTUDIANTES.md - Guía completa
+
+SOLO PARA TI (profesor):
+  ✓ CONFIGURACION.md          - Setup completo Firebase + EmailJS
+  ✓ LEEME_PROFESOR.txt        - Este archivo
+
+═══════════════════════════════════════════════════════════════
+🎯 LO QUE LOS ESTUDIANTES DEBEN CREAR
+═══════════════════════════════════════════════════════════════
+
+1. index.html    - Estructura completa de la página
+2. styles.css    - Estilos con colores del escudo MFS
+3. main.js       - JavaScript para integrar las funciones
+
+Ellos NO modifican articulos.js ni email.js
+Solo los USAN para crear su propia página.
+
+═══════════════════════════════════════════════════════════════
+🔥 CONFIGURACIÓN INICIAL (TÚ - 10 minutos)
+═══════════════════════════════════════════════════════════════
+
+Lee el archivo: CONFIGURACION.md
+
+PARTE 1: FIREBASE (4 pasos - 5 minutos)
+   1. Crear proyecto en Firebase
+   2. Activar Firestore
+   3. Copiar credenciales a js/articulos.js (línea 16)
+   4. Extender reglas de seguridad
+
+PARTE 2: EMAILJS (4 pasos - 5 minutos)
+   1. Crear cuenta en EmailJS
+   2. Conectar tu Gmail
+   3. Crear plantilla de email
+   4. Copiar credenciales a js/email.js (línea 17)
+
+Los estudiantes NO configuran nada de esto.
+Tú lo configuras una vez y les das los archivos listos.
+
+═══════════════════════════════════════════════════════════════
+📦 FUNCIONES QUE LOS ESTUDIANTES USAN
+═══════════════════════════════════════════════════════════════
+
+En articulos.js (ya implementadas):
+  await guardarArticulo(articulo)
+  await obtenerArticulos()
+
+En suscriptores.js (ya implementadas):
+  await guardarSuscriptor(suscriptor)  - Guarda en Firebase
+  await obtenerSuscriptores()          - Obtiene de Firebase
+
+En email.js (ya implementadas):
+  await notificarSuscriptores(articulo) - Envía emails a todos
+
+En modal.js (ya implementadas):
+  abrirModal(articulo)
+  cerrarModal()
+
+Ellos solo las LLAMAN desde su main.js
+
+═══════════════════════════════════════════════════════════════
+🚀 FLUJO DEL PROYECTO
+═══════════════════════════════════════════════════════════════
+
+PROFESOR:
+1. Lee CONFIGURACION.md (guía paso a paso)
+2. Configura Firebase (5 min)
+3. Configura EmailJS (5 min)
+4. Distribuye carpeta a estudiantes con:
+   - js/articulos.js (con Firebase configurado)
+   - js/suscriptores.js (con Firebase configurado)
+   - js/email.js (con EmailJS configurado)
+   - js/modal.js
+   - periodico-ejemplo/ (carpeta de referencia completa)
+   - INSTRUCCIONES_ESTUDIANTES.md
+
+ESTUDIANTES:
+1. Abren periodico-ejemplo/index.html (referencia visual)
+2. Crean su propio index.html desde cero
+3. Crean styles.css con colores de su colegio
+4. Usan las funciones de los archivos JS
+5. Prueban que todo funcione
+
+═══════════════════════════════════════════════════════════════
+ VENTAJAS DE ESTE ENFOQUE
+═══════════════════════════════════════════════════════════════
+
+ Los estudiantes se enfocan en HTML, CSS y JavaScript básico
+ No pierden tiempo configurando Firebase o EmailJS
+ Aprenden a usar funciones existentes (como en el mundo real)
+ Todo se guarda en la nube (artículos Y suscriptores)
+ Firebase y EmailJS son transparentes para ellos
+
+═══════════════════════════════════════════════════════════════
+ SOPORTE
+═══════════════════════════════════════════════════════════════
+
+Si Firebase no funciona:
+  → Verifica credenciales en js/articulos.js (línea 16)
+  → Revisa las reglas de seguridad en Firebase Console
+  → Abre consola del navegador (F12) y busca errores
+
+Si EmailJS no funciona:
+  → Verifica credenciales en js/email.js (línea 17)
+  → Revisa que la plantilla tenga las variables correctas
+  → Verifica la carpeta de spam
+
+Si estudiantes se atoran:
+  → Pueden inspeccionar periodico-ejemplo/index.html (F12)
+  → Revisar INSTRUCCIONES_ESTUDIANTES.md
+  → Usar console.log() para debugging
+  → Verificar que los archivos JS estén en la carpeta js/
+
+═══════════════════════════════════════════════════════════════
