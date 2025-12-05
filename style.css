@@ -25,9 +25,6 @@ body {
     color: white;
     padding: 20px 0;
     box-shadow: 0 4px 12px rgba(11, 93, 62, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 100;
     transition: all 0.3s ease;
 }
 
@@ -77,7 +74,7 @@ body {
     background-color: #C9B037;
     box-shadow: 0 4px 8px rgba(201, 176, 55, 0.3);
     position: sticky;
-    top: 120px;
+    top: 0;
     z-index: 99;
     transition: all 0.3s ease;
 }
